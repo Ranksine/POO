@@ -5,11 +5,27 @@ class MiClase():
         self.variable_instancia = variable_instancia
 
     @staticmethod
-    def metodoEstatico(): 
+    def metodoEstatico():
         print(f'Hola desde metodo estatico: {MiClase.variable_clase}')
 
+    @classmethod
+    def metodo_clase(cls):
+        print(f'Hola desde el método de clase: {cls.variable_clase}')
 
-MiClase.metodoEstatico()
+    def metodo_instancia(self):
+        self.metodo_clase()
+        self.metodoEstatico()
+        print(self.variable_clase)
+        print(self.variable_instancia)
+
+
+# MiClase.metodoEstatico()
+# MiClase.metodo_clase()
+
+miObjeto1 = MiClase('Variable Instancia')
+miObjeto1.metodo_clase()
+print(miObjeto1.variable_instancia)
+miObjeto1.metodo_instancia()
 
 # print(MiClase.variable_clase)
 # miClase = MiClase('Valor variable instancia')
