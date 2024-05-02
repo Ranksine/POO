@@ -3,9 +3,11 @@ from Gerente import Gerente
 
 # Metodo polimórmico
 def imprimir_detalles(objeto):
-    print(objeto)
+    # print(objeto)
     print(type(objeto))
     print(objeto.mostrar_detalles())
+    if isinstance(objeto, Gerente):
+        print(objeto.departamento)
 
 empleado = Empleado('Juan', 5000)
 imprimir_detalles(empleado)
